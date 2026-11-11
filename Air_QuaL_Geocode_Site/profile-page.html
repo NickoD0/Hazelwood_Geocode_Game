@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Profile</title>
+
+  <style>
+    body {
+      margin: 0;
+      background-color: #7db8f2;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      position: relative;
+      padding: 16px;
+    }
+
+    #menu-button {
+      font-size: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    #menu {
+      display: none;
+      position: absolute;
+      top: 70px;
+      left: 16px;
+      width: 160px;
+      padding: 10px;
+      background-color: #3b37c4;
+      border-radius: 12px;
+    }
+
+    #menu.open {
+      display: block;
+    }
+
+    #menu a {
+      display: block;
+      padding: 8px;
+      color: #4fd8f5;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /*Profile content */
+    .profile {
+      max-width: 800px;
+      margin: 0 auto;               
+      padding: 0 16px 40px;
+      text-align: center;             /* phone: everything stacked and centered */
+    }
+
+    .avatar {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 20px;
+      background-color: #d9d9d9;
+      border-radius: 50%;             /* turns the square into a circle */
+      font-size: 80px;
+      line-height: 160px;             /* centers the icon vertically */
+    }
+
+    .details {
+      color: #3b37c4;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .details p {
+      margin: 24px 0;
+    }
+
+    .details a {
+      color: #3b37c4;
+      text-decoration: none;
+    }
+
+    /* ---------- Bigger screens (tablets and computers) ---------- */
+    @media (min-width: 700px) {
+      .profile {
+        display: flex;                /* avatar and details side by side */
+        align-items: center;
+        gap: 60px;
+        text-align: left;
+      }
+      .details {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <button id="menu-button">&#9776;</button>
+
+    <div id="menu">
+      <a href="index.html">Home;</a>
+      <a href="qr-scan.html">Scan Code </a>
+      <a href="#">Challenge of the Day </a>
+      <a href="profile-page.html">My Profile </a>
+      <a href="locations.html">My Locations </a>
+      <a href="#">Progress </a>
+      <a href="#">Log Out </a>
+    </div>
+  </div>
+
+  <div class="profile">
+    <div class="avatar">&#128100;</div>
+
+    <div class="details">
+      <p>Name: John Doe</p>
+      <p>Username: example_1234</p>
+      <p>Account Started: MM/DD/YYYY</p>
+      <p>Team: Team_Name</p>
+      <p><a href="#">Friends > </a></p>
+      <p><a href="#">Rewards > </a></p>
+    </div>
+  </div>
+
+  <script>
+    // Click the hamburger button to show or hide the menu
+    var button = document.getElementById("menu-button");
+    var menu = document.getElementById("menu");
+
+    button.onclick = function () {
+      menu.classList.toggle("open");
+    };
+  </script>
+</body>
+</html>
